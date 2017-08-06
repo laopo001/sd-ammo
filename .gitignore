@@ -1,3 +1,10 @@
 bullet/build
+bullet/autom4te.cache
+bullet/depcomp
+bullet/compile
+bullet/ltmain.sh
+bullet/missing
+bullet/
+*.m4
+Makefile.in
 *.diff
-
