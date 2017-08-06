@@ -1,6 +1,11 @@
 
 // Linear Math
 
+interface btScalarArray {
+  [Const] long size();
+  float at(long n);
+};
+
 interface btVector3 {
   void btVector3();
   void btVector3(float x, float y, float z);
@@ -19,6 +24,12 @@ interface btVector3 {
   [Operator="+=", Ref] btVector3 op_add([Ref] btVector3 v);
   [Operator="-=", Ref] btVector3 op_sub([Ref] btVector3 v);
 };
+
+interface btVector3Array {
+  [Const] long size();
+  [Value] btVector3 at(long n);
+};
+
 
 interface btVector4 {
   void btVector4();
@@ -122,6 +133,17 @@ interface btCollisionObject {
   void setUserPointer(VoidPtr userPointer);
 };
 
+interface btCollisionObjectArray {
+  [Const] long size();
+  btCollisionObject at(long n);
+};
+
+interface btConstCollisionObjectArray {
+  [Const] long size();
+  [Const] btCollisionObject at(long n);
+};
+
+
 [NoDelete]
 interface btCollisionObjectWrapper {
 };
@@ -132,6 +154,7 @@ interface RayResultCallback {
   boolean hasHit();
   attribute short m_collisionFilterGroup;
   attribute short m_collisionFilterMask;
+  attribute float m_closestHitFraction;
   [Const] attribute btCollisionObject m_collisionObject;
 };
 
@@ -145,6 +168,19 @@ interface ClosestRayResultCallback {
   [Value] attribute btVector3 m_hitPointWorld;
 };
 ClosestRayResultCallback implements RayResultCallback;
+
+[Prefix="btCollisionWorld::"]
+interface AllHitsRayResultCallback {
+  void AllHitsRayResultCallback([Const, Ref] btVector3 from, [Const, Ref] btVector3 to);
+
+  [Value] attribute btConstCollisionObjectArray m_collisionObjects;
+  [Value] attribute btVector3Array m_hitNormalWorld;
+  [Value] attribute btVector3Array m_hitPointWorld;
+  [Value] attribute btScalarArray m_hitFractions;
+  [Value] attribute btVector3 m_rayFromWorld;
+  [Value] attribute btVector3 m_rayToWorld;
+};
+AllHitsRayResultCallback implements RayResultCallback;
 
 interface btManifoldPoint {
   [Const, Ref] btVector3 getPositionWorldOnA();
