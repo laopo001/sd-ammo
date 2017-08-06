@@ -33,6 +33,8 @@ struct btCollisionShapeData;
 #include "LinearMath/btAlignedObjectArray.h"
 
 typedef btAlignedObjectArray<class btCollisionObject*> btCollisionObjectArray;
+typedef btAlignedObjectArray<const btCollisionObject*> btConstCollisionObjectArray;
+
 
 #ifdef BT_USE_DOUBLE_PRECISION
 #define btCollisionObjectData btCollisionObjectDoubleData

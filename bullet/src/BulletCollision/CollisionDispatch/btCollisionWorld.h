@@ -281,14 +281,14 @@ public:
 		{
 		}
 
-		btAlignedObjectArray<const btCollisionObject*>		m_collisionObjects;
+		btConstCollisionObjectArray		m_collisionObjects;
 
 		btVector3	m_rayFromWorld;//used to calculate hitPointWorld from hitFraction
 		btVector3	m_rayToWorld;
 
-		btAlignedObjectArray<btVector3>	m_hitNormalWorld;
-		btAlignedObjectArray<btVector3>	m_hitPointWorld;
-		btAlignedObjectArray<btScalar> m_hitFractions;
+		btVector3Array	m_hitNormalWorld;
+		btVector3Array	m_hitPointWorld;
+		btScalarArray m_hitFractions;
 			
 		virtual	btScalar	addSingleResult(LocalRayResult& rayResult,bool normalInWorldSpace)
 		{

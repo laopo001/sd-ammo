@@ -20,7 +20,8 @@ subject to the following restrictions:
 //#include <stdint.h>
 #include "btScalar.h"
 #include "btMinMax.h"
-#include "btAlignedAllocator.h"
+// #include "btAlignedAllocator.h"
+#include "btAlignedObjectArray.h" // [AL] changed this to specify some specialized array types for WebIDL
 
 #ifdef BT_USE_DOUBLE_PRECISION
 #define btVector3Data btVector3DoubleData
@@ -75,6 +76,11 @@ const int32x4_t ATTRIBUTE_ALIGNED16(btvAbsMask) = (int32x4_t){0x7FFFFFFF, 0x7FFF
 const int32x4_t ATTRIBUTE_ALIGNED16(btv3AbsMask) = (int32x4_t){0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x0};
 
 #endif
+
+// [AL] add typedefs for WebIDL
+typedef btAlignedObjectArray<btScalar> btScalarArray;
+typedef btAlignedObjectArray<class btVector3> btVector3Array;
+
 
 /**@brief btVector3 can be used to represent 3D points and vectors.
  * It has an un-used w component to suit 16-byte alignment when btVector3 is stored in containers. This extra component can be used by derived classes (Quaternion?) or by user
