@@ -811,6 +811,7 @@ interface btGhostObject {
   void btGhostObject();
   long getNumOverlappingObjects();
   btCollisionObject getOverlappingObject(long index);
+  btGhostObject upcast(btCollisionObject colObj);
 };
 btGhostObject implements btCollisionObject;
 
