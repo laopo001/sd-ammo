@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "Direct port of the Bullet physics engine to JavaScript using Emscripten",
   "main": "builds/ammo.js",
+  "types": "ammo.d.ts",
   "repository": {
     "type": "git",
     "url": "git://github.com/kripken/ammo.js.git"
