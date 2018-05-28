@@ -1,16 +1,16 @@
 {
-  "name": "ammo.js",
-  "version": "0.0.2",
-  "description": "Direct port of the Bullet physics engine to JavaScript using Emscripten",
+  "name": "@stardazed/ammo",
+  "version": "0.1.0",
+  "description": "Direct port of the Bullet physics engine to JavaScript using Emscripten - tweaked for use in Stardazed",
   "main": "builds/ammo.js",
   "types": "ammo.d.ts",
   "repository": {
     "type": "git",
-    "url": "git://github.com/kripken/ammo.js.git"
+    "url": "git://github.com/stardazed/sd-ammo.git"
   },
   "author": "Alon Zakai <alonzakai@gmail.com>",
   "bugs": {
     "url": "https://github.com/kripken/ammo.js/issues"
   },
-  "homepage": "https://github.com/kripken/ammo.js"
+  "homepage": "https://github.com/stardazed/sd-ammo"
 }
