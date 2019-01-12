@@ -1,13 +1,14 @@
 {
-	"name": "@stardazed/ammo",
-	"description": "Stardazed - Ammo.js physics engine",
-	"version": "0.1.1",
+	"name": "laopo001-ammo",
+	"description": "laopo001 - Ammo.js physics engine",
+	"version": "0.0.2",
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/stardazed/sd-ammo.git"
+		"url": "git://github.com/laopo001/sd-ammo.git"
 	},
-	"homepage": "https://github.com/stardazed/sd-ammo",
+	"homepage": "https://github.com/laopo001/sd-ammo",
 	"browser": "builds/ammo.js",
+	"main": "builds/ammo.js",
 	"wasmjs": "builds/ammo.wasm.js",
 	"wasm": "ammo.wasm.wasm",
 	"types": "ammo.d.ts",

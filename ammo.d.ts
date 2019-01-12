@@ -171,7 +171,7 @@ declare namespace Ammo {
 
 	abstract class btMotionState {
 		getWorldTransform(worldTrans: btTransform): void;
- 		setWorldTransform(worldTrans: btTransform): void;
+		setWorldTransform(worldTrans: btTransform): void;
 	}
 
 	class btDefaultMotionState extends btMotionState {
@@ -190,7 +190,7 @@ declare namespace Ammo {
 		CF_DISABLE_VISUALIZE_OBJECT = 32
 	}
 
-	const enum AnisotropicFrictionFlags { 
+	const enum AnisotropicFrictionFlags {
 		CF_ANISOTROPIC_FRICTION_DISABLED = 0,
 		CF_ANISOTROPIC_FRICTION = 1,
 		CF_ANISOTROPIC_ROLLING_FRICTION = 2
@@ -253,7 +253,7 @@ declare namespace Ammo {
 
 		setCcdMotionThreshold(ccdMotionThreshold: number): void;
 		setCcdSweptSphereRadius(radius: number): void;
-		setContactProcessingThreshold (contactProcessingThreshold: number): void;
+		setContactProcessingThreshold(contactProcessingThreshold: number): void;
 	}
 
 	interface btCollisionObjectArray {
@@ -403,7 +403,7 @@ declare namespace Ammo {
 		setMargin(collisionMargin: number): void;
 	}
 
-	abstract class btConvexShape extends btCollisionShape {}
+	abstract class btConvexShape extends btCollisionShape { }
 
 	class btBoxShape extends btConvexShape {
 		constructor(boxHalfExtents: btVector3);
@@ -482,13 +482,13 @@ declare namespace Ammo {
 
 	// ----
 
-	abstract class btConcaveShape extends btCollisionShape {}
+	abstract class btConcaveShape extends btCollisionShape { }
 
 	class btStaticPlaneShape extends btConcaveShape {
 		constructor(planeNormal: btVector3Const, planeConstant: number);
 	}
 
-	abstract class btTriangleMeshShape extends btConcaveShape {}
+	abstract class btTriangleMeshShape extends btConcaveShape { }
 
 	class btBvhTriangleMeshShape extends btTriangleMeshShape {
 		constructor(meshInterface: btStridingMeshInterface, useQuantizedAabbCompression: boolean, buildBvh?: boolean);
@@ -537,7 +537,7 @@ declare namespace Ammo {
 	}
 
 	abstract class btOverlappingPairCache {
-  		setInternalGhostPairCallback(ghostPairCallback: btOverlappingPairCallback): void;
+		setInternalGhostPairCallback(ghostPairCallback: btOverlappingPairCallback): void;
 	}
 
 	abstract class btBroadphaseInterface { }
@@ -724,9 +724,9 @@ declare namespace Ammo {
 
 	// ----
 
-	abstract class btConstraintSolver {}
+	abstract class btConstraintSolver { }
 
-	class btSequentialImpulseConstraintSolver extends btConstraintSolver {}
+	class btSequentialImpulseConstraintSolver extends btConstraintSolver { }
 
 	// ----
 
@@ -1039,9 +1039,9 @@ declare namespace Ammo {
 	}
 
 	interface Node {
-		get_m_x(): btVector3;	
+		get_m_x(): btVector3;
 		set_m_x(v: btVector3): void;
-		get_m_q(): btVector3;	
+		get_m_q(): btVector3;
 		set_m_q(v: btVector3): void;
 		get_m_v(): btVector3;
 		set_m_v(v: btVector3): void;
@@ -1201,8 +1201,8 @@ declare namespace Ammo {
 		constructor(info?: btDefaultCollisionConstructionInfo);
 	}
 
-	abstract class btSoftBodySolver {}
-	class btDefaultSoftBodySolver extends btSoftBodySolver {	}
+	abstract class btSoftBodySolver { }
+	class btDefaultSoftBodySolver extends btSoftBodySolver { }
 
 	interface btSoftBodyArray {
 		size(): number;
@@ -1228,4 +1228,8 @@ declare namespace Ammo {
 		CreateFromTriMesh(worldInfo: btSoftBodyWorldInfo, vertices: number[], triangles: number[], ntriangles: number, randomizeConstraints: boolean): btSoftBody;
 		CreateFromConvexHull(worldInfo: btSoftBodyWorldInfo, vertices: btVector3, nvertices: number, randomizeConstraints: boolean): btSoftBody;
 	}
+}
+
+declare module "laopo001-ammo" {
+	export = Ammo;
 }
