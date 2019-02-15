@@ -1,0 +1,20 @@
+{
+	"name": "laopo001-ammo",
+	"description": "laopo001 - Ammo.js physics engine",
+	"version": "0.0.3",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/laopo001/sd-ammo.git"
+	},
+	"homepage": "https://github.com/laopo001/sd-ammo",
+	"browser": "builds/ammo.js",
+	"main": "builds/ammo.js",
+	"wasmjs": "builds/ammo.wasm.js",
+	"wasm": "ammo.wasm.wasm",
+	"types": "ammo.d.ts",
+	"files": [
+		"builds",
+		"AUTHORS",
+		"ammo.d.ts"
+	]
+}
